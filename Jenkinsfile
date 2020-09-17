@@ -30,7 +30,7 @@ pipeline {
                     nexusUrl: '54.145.23.119:8081', 
                     nexusVersion: 'nexus3', 
                     protocol: 'http', 
-                    repository: 'http://54.145.23.119:8081/repository/myapp_release/', 
+                    repository: 'myapp_release', 
                     version: '1.0.0'
                 //sh "mvn package"
             }
