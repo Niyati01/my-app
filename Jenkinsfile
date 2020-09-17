@@ -22,8 +22,8 @@ pipeline {
                     [
                         artifactId: 'my-app', 
                         classifier: '', 
-                        file: 'target/my-app-1.0.0.jar', 
-                        type: 'jar']
+                        file: 'target/my-app-1.0.0.war', 
+                        type: 'war']
                 ],
                     credentialsId: 'nexus3', 
                     groupId: 'com.mycompany.app', 
