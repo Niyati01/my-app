@@ -13,6 +13,11 @@ pipeline {
         }
         stage('--package--') {
             steps {
+                sh "mvn clean package"
+            }
+        }
+        stage('--war to nexus--') {
+            steps {
                 nexusArtifactUploader artifacts: [
                     [
                         artifactId: 'my-app', 
