@@ -16,14 +16,14 @@ pipeline {
                 sh "mvn clean package"
             }
         }
-        stage('--war to nexus--') {
+        stage('--jar to nexus--') {
             steps {
                 nexusArtifactUploader artifacts: [
                     [
                         artifactId: 'my-app', 
                         classifier: '', 
-                        file: 'target/my-app-1.0.0.war', 
-                        type: 'war']
+                        file: 'target/my-app-1.0.0.jar', 
+                        type: 'jar']
                 ],
                     credentialsId: 'nexus3', 
                     groupId: 'com.mycompany.app', 
