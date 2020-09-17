@@ -27,7 +27,7 @@ pipeline {
                 ],
                     credentialsId: 'nexus3', 
                     groupId: 'com.mycompany.app', 
-                    nexusUrl: '10.0.1.150:8081', 
+                    nexusUrl: '54.145.23.119:8081', 
                     nexusVersion: 'nexus3', 
                     protocol: 'http', 
                     repository: 'http://54.145.23.119:8081/repository/myapp_release/', 
