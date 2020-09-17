@@ -13,7 +13,21 @@ pipeline {
         }
         stage('--package--') {
             steps {
-                sh "mvn package"
+                nexusArtifactUploader artifacts: [
+                    [
+                        artifactId: 'my-app', 
+                        classifier: '', 
+                        file: 'target/my-app-1.0.0.war', 
+                        type: 'war']
+                ],
+                    credentialsId: 'nexus3', 
+                    groupId: 'com.mycompany.app', 
+                    nexusUrl: '10.0.1.150:8081', 
+                    nexusVersion: 'nexus3', 
+                    protocol: 'http', 
+                    repository: 'http://54.145.23.119:8081/repository/myapp_release/', 
+                    version: '1.0.0'
+                //sh "mvn package"
             }
         }
     }
